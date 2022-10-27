@@ -1,0 +1,79 @@
+.Menu_Modal {
+    position: absolute;
+    top: 70px;
+    right: 5%;
+    width: 300px;
+    z-index: 10;
+    background-color: #fff;
+    border-radius: 14px;
+    box-shadow: 1px 1px 2px #bbbbbb;
+}
+
+.Menu_Modal .Menu_Modal_Row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 8px;
+}
+.Menu_Modal .Menu_Modal_Row img{
+    width: 70px;
+    height: 70px;
+    margin-left: 4px;
+    border-radius: 50%;
+}
+.Menu_Modal .Menu_Modal_Row .Menu_Modal_Row_content {
+    margin-left: 10px;
+    margin-right: 4px;
+}
+.Menu_Modal .Menu_Modal_Row .Menu_Modal_Row_content span{
+    display: block;
+}
+.Menu_Modal .Menu_Modal_Row .Menu_Modal_Row_content span:last-child{
+    font-size: .8rem;
+}
+.Menu_Modal .Menu_Modal_see_profile {
+    display: block;
+    width: 95%;
+    text-align: center;
+    border-radius: 18px;
+    margin: 8px auto;
+    border: 1px solid var(--blue);
+    color: var(--text-primary);
+    padding: 2.5px 0;
+    text-decoration: none;
+    transition: .5s;
+}
+.Menu_Modal .Menu_Modal_see_profile:hover{
+    background: var(--main-white-light);
+}
+.Menu_Modal .Menu_Modal_line {
+    border-bottom: 1px solid var(--main-white-light);
+}
+
+.Menu_Modal .Menu_Modal_account_links strong{
+    margin: 0 10px;
+    margin-top: 10px ;
+    display: block;
+    font-size: 1.2rem;
+    color: var(--gray);
+    font-weight: 500;
+}
+.Menu_Modal .Menu_Modal_account_links a{
+    text-decoration: none;
+    display: block;
+    color: var(--text-primary);
+    margin: 10px;
+    font-size: .9rem;
+}
+.Menu_Modal .Menu_Modal_account_links span{
+    cursor: pointer;
+    margin: 10px;
+    display: block;
+}
+
+
+@media (max-width: 550px){
+    .Menu_Modal {
+        display: none;
+    }
+}

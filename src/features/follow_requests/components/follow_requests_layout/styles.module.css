@@ -1,0 +1,6 @@
+.feed_container {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    margin-top: 18px;
+}

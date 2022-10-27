@@ -1,0 +1,116 @@
+.subscribe {
+    width: 100%;
+    padding: 0 5%;
+    margin-top: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.subscribe_box {
+    position: relative;
+    width: 100%;
+    padding: 30px 18px;
+    background-color: var(--primary-darker);
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.subscribe_content {
+    width: 60%;
+    color: var(--text-white);
+    text-align: center;
+}
+.subscribe_content span {
+    font-size: 2rem;
+    font-weight: bold;
+    display: block;
+}
+
+.subscribe_content p {
+    margin: 30px 100px;
+}
+.subscribe_content a {
+    padding: 8px 20px;
+    background-color: var(--violet);
+    border-radius: 8px;
+    text-decoration: none;
+    color: #e4e3e3;
+    transition: 0.3s;
+}
+.subscribe_content a:hover {
+    background-color: var(--primary);
+}
+
+.subscribe_box img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    position: absolute;
+}
+
+.subscribe_box .img_one {
+    top: 20px;
+    left: 60px;
+}
+.subscribe_box .img_two {
+    top: 50%;
+    transform: translateY(-50%);
+    left: 140px;
+}
+.subscribe_box .img_three {
+    bottom: 20px;
+    left: 60px;
+}
+.subscribe_box .img_four {
+    top: 20px;
+    right: 60px;
+}
+.subscribe_box .img_five {
+    top: 50%;
+    transform: translateY(-50%);
+    right: 140px;
+}
+.subscribe_box .img_six {
+    bottom: 20px;
+    right: 60px;
+}
+
+@media (max-width: 1105px) {
+    .subscribe_content span {
+        font-size: 1.5rem;
+    }
+}
+@media (max-width: 820px) {
+    .subscribe_content {
+        width: 80%;
+    }
+}
+@media (max-width: 720px) {
+    .subscribe_content {
+        width: 90%;
+    }
+    .subscribe_box .img_one,
+    .subscribe_box .img_two,
+    .subscribe_box .img_three,
+    .subscribe_box .img_four,
+    .subscribe_box .img_five,
+    .subscribe_box .img_six {
+        display: none;
+    }
+    .subscribe_content p {
+        margin: 30px 0px;
+    }
+}
+@media (max-width: 550px) {
+    .subscribe_content {
+        width: 95%;
+    }
+    .subscribe_content span {
+        font-size: 1.2rem;
+    }
+    .subscribe_content p {
+        margin: 30px 0px;
+    }
+}

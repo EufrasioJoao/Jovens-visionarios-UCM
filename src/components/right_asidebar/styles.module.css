@@ -1,0 +1,129 @@
+.right_asidebar_container {
+    width: 280px;
+    margin-left: 24px;
+    position: sticky;
+    top: 70px;
+}
+/*
+
+
+
+*
+
+*/
+
+.right_asidebar_container .right_asidebar_promotions {
+    width: 100%;
+    background: var(--white);
+    padding: 14px;
+    border-radius: 8px;
+    box-shadow: 2px 2px 3px var(--main-white-light-outline);
+}
+.right_asidebar_container .right_asidebar_promotions_columns {
+    width: 100%;
+    background: var(--white);
+    border-radius: 8px;
+    display: flex;
+    align-items:flex-start;
+    justify-content: flex-start;
+    flex-direction: column;
+}
+.right_asidebar_container .right_asidebar_promotions p{
+    width: 100%;
+    margin: 0 0 8px 0;
+    font-weight: 600;
+}
+.right_asidebar_container .right_asidebar_promotions .right_asidebar_promotions_row{
+    display: flex;
+    align-items:flex-start;
+    justify-content: center;
+    margin-bottom: 8px;
+    align-self: flex-start;
+    transform: translatex(-14px);
+}
+.right_asidebar_container .right_asidebar_promotions .right_asidebar_promotions_row img{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+.right_asidebar_container .right_asidebar_promotions div {
+    margin-left: 8px;
+}
+.right_asidebar_container .right_asidebar_promotions div span{
+    display: block;
+    color: var(--gray);
+    font-size: 1rem;
+}
+.right_asidebar_container .right_asidebar_promotions div small{
+    font-size: .8rem;
+    color: var(--gray);
+}
+/*
+
+
+
+*
+
+*/
+
+.right_asidebar_container .right_asidebar_hastags {
+    width: 100%;
+    position: relative;
+    background: var(--white);
+    padding: 14px;
+    margin: 24px 0;
+    border-radius: 8px;
+    box-shadow: 2px 2px 3px var(--main-white-light-outline);
+}
+.right_asidebar_container .right_asidebar_hastags p{
+    width: 100%;
+    border-bottom: 1px solid var(--main-white-light);
+    padding: 0 0 14px 0;
+    font-weight: 500;
+}
+.right_asidebar_container .right_asidebar_hastags div {
+    margin-top: 8px;
+}
+.right_asidebar_container .right_asidebar_hastags div span{
+    background: var(--main-white-light);
+    color: var(--gray);
+    padding: 4px;
+    border-radius: 4px;
+    margin-right: 8px;
+    margin-top: 8px;
+    display: inline-block;
+}
+/*
+
+
+
+*
+*/
+.right_asidebar_container .right_asidebar_changeconfigs {
+    width: 100%;
+    background: var(--white);
+    border-radius: 4px;
+    padding: 8px 18px;
+    box-shadow: 2px 2px 3px var(--main-white-light-outline);
+}
+.right_asidebar_container .right_asidebar_changeconfigs a{
+    text-decoration: none;
+    background: var(--blue);
+    width: 100%;
+    color: var(--text-white);
+    text-align: center;
+    padding: 8px;
+    border-radius: 4px;
+    display: block;
+    transiton: .5s;
+}
+.right_asidebar_container .right_asidebar_changeconfigs a:hover{
+    opacity: .8;
+}
+
+
+@media (max-width: 930px){
+    .right_asidebar_container {
+        display: none;
+    }
+}

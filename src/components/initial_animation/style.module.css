@@ -1,0 +1,46 @@
+.animation_container {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: white;
+}
+
+.animation_circle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 70px;
+    height: 70px;
+    font-size: 30px;
+    font-weight: bold;
+    color: rgb(23, 209, 178);
+    border: 5px solid rgb(23, 209, 178);
+    border-radius: 50%;
+    animation: circle 3s linear;
+}
+.animation_letter {
+    font-size: 30px;
+    font-weight: bold;
+    color: rgb(23, 209, 178);
+    opacity: 0;
+    animation: letter 0.5s linear;
+    animation-delay: 3s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes circle {
+    0% {
+        border-top: 5px solid transparent;
+        transform: rotate(-360deg);
+    }
+    100% {
+        border-top: 5px solid rgb(23, 209, 178);
+    }
+}
+@keyframes letter {
+    100% {
+        opacity: 1;
+    }
+}

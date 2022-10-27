@@ -1,0 +1,92 @@
+.join_as_mentor {
+    margin-top: 80px;
+    width: 100%;
+    padding: 0 15%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.join_as_mentor .join_as_mentor_left {
+    flex-basis: 45%;
+    background-color: var(--text-tomato);
+    border-top-right-radius: 50%;
+    border-top-left-radius: 50%;
+    border-bottom-left-radius: 50%;
+}
+.join_as_mentor .join_as_mentor_right {
+    flex-basis: 50%;
+}
+.join_as_mentor .join_as_mentor_left img {
+    width: 100%;
+}
+
+.join_as_mentor .join_as_mentor_right span {
+    color: var(--text-primary);
+    border-radius: 4px;
+    font-size: 2rem;
+    display: block;
+    font-weight: bold;
+}
+.join_as_mentor .join_as_mentor_right p {
+    margin: 34px 0;
+    color: var(--text-primary);
+}
+.join_as_mentor .join_as_mentor_right a {
+    border: 1px solid var(--primary);
+    padding: 12px 28px;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: 0.5s;
+    background: var(--primary);
+    color: var(--text-white);
+}
+.join_as_mentor .join_as_mentor_right a:hover {
+    opacity: 0.8;
+}
+
+@media (max-width: 1100px) {
+    .join_as_mentor {
+        padding: 0 5%;
+    }
+}
+@media (max-width: 880px) {
+    .join_as_mentor .join_as_mentor_left {
+        flex-basis: 55%;
+    }
+    .join_as_mentor .join_as_mentor_right {
+        flex-basis: 40%;
+    }
+    .join_as_mentor .join_as_mentor_right span {
+        font-size: 1.5rem;
+    }
+    .join_as_mentor .join_as_mentor_right p {
+        font-size: 1.3rem;
+    }
+}
+@media (max-width: 720px) {
+    .join_as_mentor {
+        flex-direction: column-reverse;
+    }
+    .join_as_mentor .join_as_mentor_left {
+        flex-basis: 100%;
+        margin-top: 20px;
+    }
+    .join_as_mentor .join_as_mentor_right {
+        flex-basis: 90%;
+        margin-top: 20px;
+    }
+    .join_as_mentor .join_as_mentor_right span {
+        font-size: 2.3rem;
+    }
+    .join_as_mentor .join_as_mentor_right p {
+        font-size: 1.5rem;
+    }
+}
+@media (max-width: 580px) {
+    .join_as_mentor .join_as_mentor_right span {
+        font-size: 1.5rem;
+    }
+    .join_as_mentor .join_as_mentor_right p {
+        font-size: 1rem;
+    }
+}

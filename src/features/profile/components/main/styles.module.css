@@ -1,0 +1,29 @@
+.profile_main_container_ksk {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-direction: column;
+    min-height: 100vh;
+    width: min(700px, 100%);
+    position: relative;
+}
+
+.profile_posts_collection{
+    width: 100%;
+}
+
+@media (max-width: 1080px){
+    .profile_main_container_ksk {
+        width: min(600px, 90%);
+    }
+}
+@media (max-width: 980px){
+    .profile_main_container_ksk {
+        width: min(500px, 90%);
+    }
+}
+@media (max-width: 930px){
+    .profile_main_container_ksk {
+        width: min(700px, 90%);
+    }
+}

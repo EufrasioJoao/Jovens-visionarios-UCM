@@ -1,0 +1,31 @@
+.feed_main_container {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-direction: column;
+    min-height: 100vh;
+    width: min(550px, 100%);
+}
+
+.feed_main_container .sortpostsby {
+    align-self: center;
+    margin: 4px 0;
+    position: relative;
+}
+.feed_main_container .sortpostsby select {
+    border: none;
+    outline: none;
+    background: none;
+    color: var(--blue);
+    align-self: center;
+    margin: 24px 0;
+}
+
+.feed_posts_collection {
+    width: 100%;
+}
+@media (max-width: 930px){
+    .feed_main_container {
+        width: min(700px, 90%);
+    }
+}

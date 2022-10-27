@@ -1,0 +1,89 @@
+.left_asidebar_container {
+    width: 250px;
+    margin-right: 24px;
+    position: sticky;
+    top: 70px;
+}
+
+/*     
+
+
+
+
+* */
+.left_asidebar_container .left_asidebar_userinfo_container {
+    width: 100%;
+    background: var(--white);
+    border-radius: 8px;
+    box-shadow: 2px 2px 3px var(--main-white-light-outline);
+}
+.left_asidebar_container .left_asidebar_userinfo_container div {
+    width: 100%;
+    height: 100px;
+    position: relative;
+    background: var(--main-white-dark);
+}
+.left_asidebar_container .left_asidebar_userinfo_container img {
+    width: 100%;
+    height: 100%;
+    border-radius: 8px 8px 0  0 ;
+}
+.left_asidebar_container .left_asidebar_userinfo_container img:last-child {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    position: absolute;
+    bottom: -50px;
+    left: 50%;
+    transform: translatex(-50%);
+    border: 5px solid var(--white);
+}
+.left_asidebar_container .left_asidebar_userinfo_container span {
+    display: block;
+    font-weight: 500;
+    text-align: center;
+    margin-top: 55px;
+}
+.left_asidebar_container .left_asidebar_userinfo_container p {
+    font-size: .9rem;
+    padding: 4px 14px;
+    text-align: center;
+}
+/*     
+
+
+
+
+* */
+.left_asidebar_container .left_asidebar_events_container {
+    width: 100%;
+    background: var(--white);
+    border-radius: 8px;
+    margin-top: 24px;
+    box-shadow: 2px 2px 3px var(--main-white-light-outline);
+}
+
+.left_asidebar_container .left_asidebar_events_container a {
+    display: block;
+    margin-bottom: 10px;
+    text-align: left;
+    padding-left: 8px;
+    padding-top: 8px;
+    text-decoration: none;
+    color: var(--blue);
+}
+.left_asidebar_container .left_asidebar_events_container a:last-child {
+    display: block;
+    padding-bottom: 10px;
+    text-align: center;
+    padding: 18px 0;
+    text-decoration: none;
+    border-top: 1px solid var(--main-white-light-outline);
+    color: var(--gray);
+}
+
+@media (max-width: 1200px){
+    .left_asidebar_container {
+        display: none;
+    }
+}

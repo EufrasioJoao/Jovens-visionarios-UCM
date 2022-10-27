@@ -1,0 +1,50 @@
+.hero_conatiner {
+    width: 100%;
+    height: 100vh;
+    background-image: linear-gradient(
+            to right,
+            rgba(138, 131, 241, 0.103),
+            rgba(0, 0, 128, 0.116)
+        ),
+        url(../../assets/home-slide-1.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    animation: bg 50s linear infinite;
+    z-index: 1;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@media (max-width: 920px) {
+    .hero_conatiner {
+        height: 60vh;
+    }
+}
+@media (max-width: 420px) {
+    .hero_conatiner {
+        height: 100vh;
+    }
+}
+
+@keyframes bg {
+    0% {
+        background-image: linear-gradient(
+                to right,
+                rgba(138, 131, 241, 0.103),
+                rgba(0, 0, 128, 0.116)
+            ),
+            url(../../assets/home-slide-1.jpg);
+    }
+    70% {
+        background-image: linear-gradient(
+                to right,
+                rgba(138, 131, 241, 0.103),
+                rgba(0, 0, 128, 0.116)
+            ),
+            url(../../assets/home-slide-3.jpg);
+    }
+}

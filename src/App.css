@@ -1,0 +1,78 @@
+:root {
+    --background: #f3f0f0;
+    --primary: rgb(138, 131, 241);
+    --primary-hover: rgba(138, 131, 241, 0.623);
+    --primary-darker: rgb(45, 39, 129);
+    --text-primary: hsl(245, 36%, 33%);
+    --white: rgb(255, 255, 255);
+    --text-white: rgb(234, 233, 236);
+    --text-dark: rgb(80, 79, 82);
+    --text-white-dark: rgb(163, 163, 165);
+    --yellow-primary: rgb(255, 229, 81);
+    --yellow-primary-hover: rgba(247, 200, 99, 0.755);
+    --text-yellow: rgba(255, 175, 1, 0.932);
+    --text-tomato: rgb(253, 111, 101);
+    --green-primary-light: rgb(131, 250, 176);
+    --green-primary-dark: rgba(84, 230, 140, 0.829);
+    --blue-primary-dark: rgb(107, 159, 255);
+    --blue-primary-light: rgb(138, 193, 255);
+    --blue-violet: rgb(86, 124, 247);
+    --violet: rgba(157, 109, 235, 0.856);
+    --outline: rgba(178, 182, 187, 0.63);
+
+    /* nav */
+    --dark: #181818;
+    --blue: #0275b1;
+    --bg-primary: #f4f4f4;
+    --color: #02b033;
+    --gray: #747474;
+    --gray-outline: #747474b6;
+    --bg-secondary: #cecece;
+    --yellow: #ffb75e;
+
+    /* Main */
+    --main-white-light: #e7e7e7;
+    --main-white-light-outline: #e7e7e791;
+    --main-white-dark: #e9f0f8;
+    --main-white-gray: #c4c4c4;
+}
+/*
+import {
+    PaperClip,
+    RssSimple,
+    MagnifyingGlass,
+    Bell,
+    PaperPlaneTilt,
+    ShareNetwork,
+    UserList,
+    Users,
+    HeartStraiht,
+    Chat,
+} from "phosphor-react";
+*/
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    color: var(--text-primary);
+    background: var(--bg-primary);
+    height: 100vh;
+}
+
+.app {
+    z-index: 1;
+    height: 100%;
+    max-width: 1440px;
+    position: relative;
+    margin: auto;
+    z-index: 2;
+    border-left: 1px solid var(--outline);
+    border-right: 1px solid var(--outline);
+}

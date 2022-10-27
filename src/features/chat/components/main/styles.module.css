@@ -1,0 +1,118 @@
+.chat_left_asidebar_container {
+    width: min(800px, 100%);
+    margin-right: 0px;
+    position: sticky;
+    top: 70px;
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.chat_left_asidebar_container header{
+    background: var(--white);
+    height: 10%;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid var(--main-white-light-outline);
+}
+.chat_left_asidebar_container header span{
+    padding: 0 14px;
+    font-weight: 500;
+    font-size: 1.3rem;
+    font-family: monospace;
+}
+/*
+
+
+
+*
+
+*/
+.chat_left_asidebar_container .left_asidebar_rooms_box{
+    width: 100%;
+    /* height: 77%; */
+    height: 90%;
+    overflow: hidden;
+    overflow-y: scroll;
+    margin-bottom: 5%;
+    background: var(--white);
+}
+.chat_left_asidebar_container 
+.left_asidebar_rooms_box 
+.left_asidebar_room{
+    display: flex;
+    align-items: center;
+    padding-left: 14px;
+    overflow: hidden;
+    padding-top: 18px;
+    padding-bottom: 18px;
+    cursor: pointer;
+    border-top: 1px solid var(--main-white-light-outline);
+}
+
+.chat_left_asidebar_container 
+.left_asidebar_rooms_box 
+.left_asidebar_room:hover{
+    background: rgba(0,0,0,0.1);
+}
+.chat_left_asidebar_container 
+.left_asidebar_rooms_box 
+.left_asidebar_room img{
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    flex-shrink: 0;
+    margin-right: 14px;
+}
+.chat_left_asidebar_container 
+.left_asidebar_rooms_box 
+.left_asidebar_room div span:first-child{
+    display: block;
+    font-weight: 500;
+    color: var(--gray);
+}
+.left_asidebar_room div span:last-child{
+    display: block;
+    font-size: .9rem;
+    color: var(--gray);
+}
+/*
+
+
+
+*/
+
+.chat_left_asidebar_container 
+.left_asidebar_start_new_chat{
+    display: none;
+    /* display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 10%;
+    background: var(--white);
+    border-radius: 5px; */
+}
+.chat_left_asidebar_container 
+.left_asidebar_start_new_chat button{
+    display: flex;
+    justify-content: center;
+    padding: 8px 0;
+    width: 70%;
+    border-radius: 5px;
+    background: var(--blue);
+    border: none;
+    color: var(--white);
+    font-size: .6rem;
+    cursor: pointer;
+}
+.chat_left_asidebar_container 
+.left_asidebar_start_new_chat button:hover{
+    opacity: .8;
+}
+@media (max-width: 900px){
+    .chat_left_asidebar_container {
+        width: min(750px, 100%);
+        padding: 0 5%;
+    }
+}

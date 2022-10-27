@@ -1,0 +1,122 @@
+
+.chat_main_container {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-direction: column;
+    width: min(800px, 100%);
+    height: 80vh;
+    background: var(--white);
+    position: relative;
+}
+@media (max-width:830px){
+    .chat_main_container {
+        height: 92vh;
+    }
+}
+/*
+
+
+
+
+*/
+.chat_main_container header{
+    width: 100%;
+    height: 50px;
+    border-bottom: 1px solid var(--main-white-light-outline);
+    font-weight: 500;
+    padding: 18px;
+    display: flex;
+    align-items: center;
+    font-size: .9rem;
+    color: var(--gray);
+}
+.chat_main_container header span{
+    color: var(--blue);
+}
+/*
+
+
+
+
+*/
+
+.chat_main_container .content{
+    display: flex;
+    flex-direction: column;
+    padding: 18px;
+    overflow-y: auto;
+    width: 100%;
+    min-height: 80%;
+    display: flex;
+    flex-direction: column;
+}
+
+
+.chat_main_container .content .minediv{
+    padding-left: 20%;
+}
+.chat_main_container .content .hisdiv{
+    padding-right: 20%;
+}
+.chat_main_container .content .hisdiv span{
+    background: var(--blue);
+    display: inline-block;
+    padding: 8px 18px;
+    color: var(--text-white);
+    border-radius: 4px;
+    margin-top: 24px;
+    letter-spacing: 1px;
+    font-size: .9rem;
+    float: left;
+}
+.chat_main_container .content .minediv span{
+    display: inline-block;
+    padding: 8px 18px;
+    color: var(--gray);
+    border-radius: 4px;
+    margin-top: 24px;
+    letter-spacing: 1px;
+    font-size: .9rem;
+    float: right;
+}
+.chat_main_container .content .mine{
+    background: var(--main-white-dark);
+    color: var(--gray);
+    float: right;
+}
+/*
+
+
+
+
+*/
+.chat_main_container .footer{
+    width: 100%;
+    height: 50px;
+    padding: 18px;
+    border-top: 1px solid var(--main-white-light-outline);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.chat_main_container .footer input{
+    flex-basis: 85%;
+    height: 100%;
+    padding: 18px;
+    background: none;
+    border: none;
+    outline: none;
+    color: var(--gray);
+}
+.chat_main_container .footer button{
+    padding: 4px 14px;
+    border-radius: 8px;
+    background: var(--blue);
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+.chat_main_container .footer button:hover{
+    opacity: .8;
+}
