@@ -19,13 +19,14 @@ export function NetworkSearchedItem({
     // check if users are friends
     async function check_if_is_friend() {
         let user = await localStorage.getItem("jovens_visionarios_username");
+        let server_url = localStorage.getItem('jvs')
         
         let data = {
             Destiny: username,
             Emissor: user, 
             RequestStatus: 'accepted'
         }
-        await Axios.post(`https://jovens-visionarios-ucm-server.herokuapp.com/api/friends/check_if_is_my_friend`, data)
+        await Axios.post(`${server_url}/friends/check_if_is_my_friend`, data)
         .then((response) => {
             // console.log(response.data, 'ismyfriend');
             if(response.data.isFriend === true){
@@ -40,6 +41,7 @@ export function NetworkSearchedItem({
     // check if request was already sent
     async function check_if_request_was_already_sent() {
         let user = await localStorage.getItem("jovens_visionarios_username");
+        let server_url = localStorage.getItem('jvs') 
         
         let data = {
             Destiny: username,
@@ -47,7 +49,7 @@ export function NetworkSearchedItem({
             RequestStatus: 'waiting'
         }
 
-        await Axios.post(`https://jovens-visionarios-ucm-server.herokuapp.com/api/friends/already_made_request`, data)
+        await Axios.post(`${server_url}/friends/already_made_request`, data)
         .then((response) => {
             // console.log(response.data, 'alredy requested');
             if(response.data.alreadySent){
@@ -62,14 +64,15 @@ export function NetworkSearchedItem({
     async function DeleteFriendshipRequest() {
         setAlreadyRequested(false)
         let user = await localStorage.getItem("jovens_visionarios_username");
-        
+        let server_url = localStorage.getItem('jvs') 
+
         let data = {
             Destiny: username,
             Emissor: user, 
             RequestStatus: 'waiting'
         }
 
-        await Axios.post(`https://jovens-visionarios-ucm-server.herokuapp.com/api/friends/delete_friendship_request`, data)
+        await Axios.post(`${server_url}/friends/delete_friendship_request`, data)
         .then((response) => {
                 // console.log(response.data);
         })
@@ -79,15 +82,17 @@ export function NetworkSearchedItem({
     
     // add friendship request
     async function AddFriendshipRequest() {
+        setAlreadyRequested(true)
         let user = await localStorage.getItem("jovens_visionarios_username");
-        
+        let server_url = localStorage.getItem('jvs') 
+
         let data = {
             Destiny: username,
             Emissor: user, 
             RequestStatus: 'waiting'
         }
         
-        await Axios.post(`https://jovens-visionarios-ucm-server.herokuapp.com/api/friends/add_friendship_request`, data)
+        await Axios.post(`${server_url}/friends/add_friendship_request`, data)
         .then((response) => {
             // console.log(response.data);
             if(response.data.sent){
@@ -102,10 +107,11 @@ export function NetworkSearchedItem({
 
 
     useEffect( ()=>{
+        let server_url = localStorage.getItem('jvs') 
         check_if_request_was_already_sent()
         check_if_is_friend()
 
-        Axios.get(`https://jovens-visionarios-ucm-server.herokuapp.com/api/users/single/${username}`)
+        Axios.get(`${server_url}/users/single/${username}`)
         .then((response) => {
             setAuthorAvatar(response.data.result.Avatar)
         })
@@ -119,7 +125,7 @@ export function NetworkSearchedItem({
                     }>
                     <div className={style.NetworkSearchedItem_row}>
                         <div className={style.NetworkSearchedItem_img}>
-                            <img width='25px' alt='' src={authorAvatar ? authorAvatar : '/assets/images/me1.jpg'}></img>
+                            <img width='25px' alt='' src={authorAvatar && authorAvatar }></img>
                         </div>
 
                         <div className={style.NetworkSearchedItem_content}>

@@ -13,13 +13,14 @@ export function ChatMainContent() {
     // check if users are friends
     async function get_my_friends() {
         let user = await localStorage.getItem("jovens_visionarios_username");
-        
+        let server_url = localStorage.getItem('jvs')
+
         let data = {
             Username: user,
             RequestStatus: 'accepted'
         }
 
-        await Axios.post(`https://jovens-visionarios-ucm-server.herokuapp.com/api/friends/get_my_friends`, data)
+        await Axios.post(`${server_url}/friends/get_my_friends`, data)
         .then((response) => {
             // console.log(response.data.result, 'check');
             setListOfRooms(response.data.result)
@@ -62,9 +63,6 @@ export function ChatMainContent() {
                 
             </div>
             
-            {/* <div className={style.left_asidebar_start_new_chat}>
-                <button>CRIAR NOVO CHAT</button>
-            </div> */}
         </div>
     );
 }

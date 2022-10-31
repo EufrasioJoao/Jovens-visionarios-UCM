@@ -9,6 +9,7 @@ import { NetworkPage } from "../pages/Network";
 import { FollowRequestsPage } from "../pages/FollowRequests";
 import { ChatPage } from "../pages/Chat";
 import { ChatRoomPage } from "../pages/ChatRoom";
+import { Configs } from "../pages/Configs";
 
 import { appContext } from "../context/Index";
 
@@ -46,6 +47,7 @@ export function Router() {
                     <Route path="/register" element={<Register />} />
                     <Route path="/login" element={<Login />} />
                     <Route path="/" element={<Homepage />} />
+                    <Route path="/configs" element={<Configs />} />
                 </Routes>
             </BrowserRouter>
         </div>

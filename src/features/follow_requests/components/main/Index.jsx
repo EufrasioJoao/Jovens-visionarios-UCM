@@ -2,17 +2,17 @@ import React, { useState, useEffect} from "react";
 import Axios from 'axios'
 import { NetworkSearchedItem } from "../searched_item/Index";
 import style from "./styles.module.css";
-// import {MagnifyingGlass} from "phosphor-react";
 
 export function FriendshipRequestsMainContent() {
     const [listOfUsers, setListOfUsers] = useState([]);
     const [isThereAnyRequest, setIsThereAnyRequest] = useState(false);
     
     async function fetchData() {
+        let server_url = localStorage.getItem('jvs')
         let user = await localStorage.getItem("jovens_visionarios_username");
         
         // Fetching user info
-        await Axios.post(`https://jovens-visionarios-ucm-server.herokuapp.com/api/friends/my_requests`, {user})
+        await Axios.post(`${server_url}/friends/my_requests`, {user})
         .then((response) => {
                 if(response.data.result.length === 0){
                     setIsThereAnyRequest(false)

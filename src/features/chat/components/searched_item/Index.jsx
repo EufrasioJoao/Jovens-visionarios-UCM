@@ -13,8 +13,9 @@ export function ChatSearchedItem({
 
     async function getUserAvatar() {
         let _username = await username
+        let server_url = localStorage.getItem('jvs')
 
-        await Axios.get(`http://localhost:3001/api/users/single/${_username}`)
+        await Axios.get(`${server_url}/users/single/${_username}`)
         .then((response) => {
             setAuthorAvatar(response.data.result.Avatar)
         })
@@ -28,7 +29,7 @@ export function ChatSearchedItem({
     return (
         
         <div key={value.id} className={style.left_asidebar_room} onClick={()=>gotToChatRoom(value)}>
-            <img width='40px' src={authorAvatar ? authorAvatar : "/assets/images/me1.jpg"}></img>
+            <img width='40px' src={authorAvatar && authorAvatar}></img>
             
             <div>
                 <span>

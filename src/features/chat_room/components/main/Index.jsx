@@ -4,7 +4,7 @@ import style from "./styles.module.css";
 import {PaperPlaneTilt} from "phosphor-react";
 
 import io from "socket.io-client";
-const socket = io.connect("https://jovens-visionarios-ucm-server.herokuapp.com");
+const socket = io.connect(localStorage.getItem('jvs'));
 
 export function ChatRoomMainContent() {
     
@@ -16,10 +16,11 @@ export function ChatRoomMainContent() {
     let roomName =  localStorage.getItem("jovens_visionarios_RN");
     
     useEffect(()=>{
+        let server_url = localStorage.getItem('jvs')
         otherPerson !== '' && socket.emit('join_room', roomName)
 
         if(otherPerson !== ''){
-            fetch(`https://jovens-visionarios-ucm-server.herokuapp.com/api/messages/my_messages`, {
+            fetch(`${server_url}/messages/my_messages`, {
                     method: "POST",
                     body: JSON.stringify({RoomName: roomName}),
                     headers: {"Content-Type": "application/json"},
@@ -40,11 +41,12 @@ export function ChatRoomMainContent() {
 
     // useEffect to receive messages from the backend
     useEffect(()=>{
+        let server_url = localStorage.getItem('jvs')
         socket.emit('join_room', roomName) //also joining room in case it didn't
 
         socket.on('receive_message', (data)=>{
                 // setMessageList((list)=>[...list, data])
-                 fetch(`https://jovens-visionarios-ucm-server.herokuapp.com/api/messages/my_messages`, {
+                 fetch(`${server_url}/messages/my_messages`, {
                         method: "POST",
                         body: JSON.stringify({RoomName: roomName}),
                         headers: {"Content-Type": "application/json"},

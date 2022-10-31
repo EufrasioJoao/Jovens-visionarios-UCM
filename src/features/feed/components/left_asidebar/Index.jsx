@@ -10,14 +10,12 @@ export function FeedLeftAsideBar({data}) {
                     { data?.Banner && <img src={data?.Banner} alt='' />}
                     
                     { 
-                        data?.Avatar ? <a href='/profile'><img src={data?.Avatar} alt=''/></a>  
-                        : 
-                        <a href='/profile'><img src='\assets\images\me1.jpg' alt='' /></a>
+                        data?.Avatar && <a href='/profile'><img src={data?.Avatar} alt=''/></a> 
                     }
                 </div>
                 <span>{data?.Username}</span>
                 <p>
-                    {data?.Biography ? data?.Biography : 'Um usuario da plataforma jovens visionarios'}
+                    {data?.Biography && data?.Biography }
                 </p>
             </div>
             
@@ -25,7 +23,7 @@ export function FeedLeftAsideBar({data}) {
                 {/* <a href='/'>Grupos</a>
                 <a href='/'>Eventos</a>
                 <a href='/'>Aulas</a> */}
-                <a href='/about'>Descubra mais</a>
+                <a href='/#'>Descubra mais</a>
             </div>
         </div>
     );

@@ -24,6 +24,10 @@ export function RegisterContainer() {
         e.preventDefault();
 
         let ableToSubmit = email.includes('ucm.ac.mz');
+        let server_url = localStorage.getItem('jvs')
+
+
+
 
         //values to be submited
         const valuesToSubmit = {
@@ -37,7 +41,7 @@ export function RegisterContainer() {
         
 
         if (universityLocation && type && ableToSubmit) {
-            Axios.post("https://jovens-visionarios-ucm-server.herokuapp.com/api/users/register", {
+            Axios.post(`${server_url}/users/register`, {
                 valuesToSubmit,
             })
                 .then((response) => {
@@ -138,7 +142,7 @@ export function RegisterContainer() {
                             Ao clicar em Continuar {"&"} Registar-se, voce
                             concorda com <br />
                             as nossas{" "}
-                            <a href="/#">politicas de uso de dados</a>.
+                            <a href="#">politicas de uso de dados</a>.
                         </p>
                         <button>Continuar {"&"} Registar-se</button>
                     </form>

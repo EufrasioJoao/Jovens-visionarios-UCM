@@ -16,7 +16,9 @@ export function NetworkSearchedItem({
 
     // Fetching user info
     useEffect( ()=>{
-        Axios.get(`https://jovens-visionarios-ucm-server.herokuapp.com/api/users/single/${username}`)
+        let server_url = localStorage.getItem('jvs')
+        
+        Axios.get(`${server_url}/users/single/${username}`)
         .then((response) => {
             setAvatar(response.data.result.Avatar  ? response.data.result.Avatar : '/assets/images/me1.jpg')
             setType(response.data.result.Type  === "student" ? 'Estudante'  : 'Professor')
@@ -32,14 +34,15 @@ export function NetworkSearchedItem({
     async function AcceptFriendshipRequest() {
         setAlreadyRequested(true)
         let user = await localStorage.getItem("jovens_visionarios_username");
-        
+        let server_url = localStorage.getItem('jvs')
+
         let data = {
             Destiny: user,
             Emissor: username, 
             id: id
         }
 
-        await Axios.post(`https://jovens-visionarios-ucm-server.herokuapp.com/api/friends/accept_friendship_request`, data)
+        await Axios.post(`${server_url}/friends/accept_friendship_request`, data)
         .then((response) => {
                 // console.log(response.data);
         })
@@ -48,8 +51,9 @@ export function NetworkSearchedItem({
 
     async function getUserAvatar() {
         let _username = await username
+        let server_url = localStorage.getItem('jvs')
 
-        await Axios.get(`https://jovens-visionarios-ucm-server.herokuapp.com/api/users/single/${_username}`)
+        await Axios.get(`${server_url}/users/single/${_username}`)
         .then((response) => {
             setAuthorAvatar(response.data.result.Avatar)
         })
@@ -65,7 +69,7 @@ export function NetworkSearchedItem({
         <div className={style.NetworkSearchedItem}>
             <div className={style.NetworkSearchedItem_row}>
                 <div className={style.NetworkSearchedItem_img}>
-                    <img width='25px' alt='' src={authorAvatar ? authorAvatar : '\assets\images\me1.jpg'}></img>
+                    <img width='25px' alt='' src={authorAvatar && authorAvatar}></img>
                 </div>
 
                 <div className={style.NetworkSearchedItem_content}>

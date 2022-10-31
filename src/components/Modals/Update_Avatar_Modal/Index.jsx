@@ -18,9 +18,11 @@ export const UpdateAvatar = ({ id, onClose = () => {} }) => {
             Avatar: imageUrl,
             id: id,
         };
+        let server_url = localStorage.getItem('jvs')
+
 
         // post request to the server
-        Axios.post("https://jovens-visionarios-ucm-server.herokuapp.com/api/users/update_avatar", {
+        Axios.post(`${server_url}/users/update_avatar`, {
             valuesToSubmit,
         })
             .then((response) => {

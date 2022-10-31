@@ -25,9 +25,10 @@ export function LoginContainer() {
             Username: username,
             Password: password,
         };
+        let server_url = localStorage.getItem('jvs')
 
-        if (username && password) {
-            Axios.post("https://jovens-visionarios-ucm-server.herokuapp.com/api/users/login", {
+        if (username && password && server_url) {
+            Axios.post(`${server_url}/users/login`, {
                 valuesToSubmit,
             })
                 .then((response) => {
@@ -50,7 +51,7 @@ export function LoginContainer() {
                 })
                 .catch((err) => console.log(err));
         } else {
-            alert("fill all fields");
+            setMessage('Preencha todos os campos')
         }
     };
 
@@ -86,7 +87,7 @@ export function LoginContainer() {
                             Ao clicar em Continuar {"&"} Entrar, voce concorda
                             com <br />
                             as nossas{" "}
-                            <a href="/#">politicas de uso de dados</a>.
+                            <a href="#">politicas de uso de dados</a>.
                         </p>
                         <button>Continuar {"&"} Entrar</button>
                     </form>

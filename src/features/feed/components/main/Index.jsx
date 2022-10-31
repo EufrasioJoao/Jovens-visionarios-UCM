@@ -14,9 +14,11 @@ export function FeedMainContent() {
     var callOnce = false
     
     async function fetchPosts() {
+        let server_url = localStorage.getItem('jvs')
+
         // get request to the server
         if(!callOnce){
-            Axios.get("https://jovens-visionarios-ucm-server.herokuapp.com/api/posts/get")
+            Axios.get(`${server_url}/posts/get`)
                 .then((response) => {
                     if (response.data.result) {
                                 for (let i = 0; i < response.data.result.length; i++) {
@@ -35,9 +37,10 @@ export function FeedMainContent() {
 
 
     useEffect(() => {
+        let server_url = localStorage.getItem('jvs')
         let user = localStorage.getItem("jovens_visionarios_username");
 
-        Axios.get(`https://jovens-visionarios-ucm-server.herokuapp.com/api/users/single/${user}`)
+        Axios.get(`${server_url}/users/single/${user}`)
         .then((response) => {
             setUserInfo(response.data.result)
         })

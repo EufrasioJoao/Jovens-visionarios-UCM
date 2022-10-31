@@ -1,5 +1,4 @@
-import React, { useState } from "react";
-//import React, { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Router } from "./routes/Index";
 import { MainContext } from "./context/Index";
 import { InitialAnimation } from "./components/initial_animation/Index";
@@ -9,6 +8,7 @@ import "./App.css";
 
 function App() {
     const [endAnimation, setEndAnimation] = useState(false)
+    localStorage.setItem('jvs', "https://jovens-visionarios-ucm-server.herokuapp.com")
 
     // useEffect(() => {
     //     Aos.init({ duration: 1000 });

@@ -1,7 +1,6 @@
 import React, { useState, useEffect} from "react";
 import Axios from 'axios'
 import { ProfileMainInfo } from "../profile_main_info/Index";
-// import { NewPost } from "../new_post/Index";
 import { Post } from "../../../../components/post/Index";
 import style from "./styles.module.css";
 
@@ -14,9 +13,10 @@ export function ProfileMainContent() {
     
     async function fetchData() {
         let user = await localStorage.getItem("jovens_visionarios_username");
+        let server_url = localStorage.getItem('jvs') 
         
         // Fetching user info
-        await Axios.get(`https://jovens-visionarios-ucm-server.herokuapp.com/api/posts/${user}`)
+        await Axios.get(`${server_url}/posts/${user}`)
         .then((response) => {
             if (response.data.result) {
                 // console.log(response.data.result);
@@ -26,7 +26,7 @@ export function ProfileMainContent() {
         .catch((err) => console.log(err));
         
         // get request to the server to get posts from this user
-        await Axios.get(`https://jovens-visionarios-ucm-server.herokuapp.com/api/posts/${user}`)
+        await Axios.get(`${server_url}/posts/${user}`)
                 .then((response) => {
                     if (response.data.result) {
                         // console.log(response.data.result.reverse());
@@ -45,7 +45,6 @@ export function ProfileMainContent() {
     return (
         <div className={style.profile_main_container_ksk}>
             <ProfileMainInfo />
-            {/* <NewPost /> */}
             <br/>
 
             <div className={style.profile_posts_collection}>

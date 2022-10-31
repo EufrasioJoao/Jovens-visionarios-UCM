@@ -18,7 +18,7 @@ export function NetworkLayout() {
                 <FeedMainContent />
                 <FeedRightAsideBar />
             </div>
-        <AccountFooter data={Username}/>
+        <AccountFooter/>
         </div>
     );
 }

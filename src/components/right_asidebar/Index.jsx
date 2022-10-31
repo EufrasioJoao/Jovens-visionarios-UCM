@@ -40,7 +40,7 @@ export function FeedRightAsideBar({image, backgroungimage}) {
                 </div>
             </div>
             <div className={style.right_asidebar_changeconfigs}>
-                <a href='#' >Mude as suas configs</a>
+                <a href='/configs' >Veja as suas configs</a>
             </div>
         </div>
     );

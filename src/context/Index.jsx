@@ -16,12 +16,10 @@ export function MainContext({ children }) {
 
         if (!user) {
             setLoggedIn(false);
-            // console.log("not LoggedIn", LoggedIn);
         } else {
             setLoggedIn(true);
             setUsername(user)
             setAvatar(userAvatar)
-            // console.log("is LoggedIn", LoggedIn);
         }
     }, []);
 

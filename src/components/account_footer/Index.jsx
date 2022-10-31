@@ -2,7 +2,7 @@ import React, {useState} from "react";
 import Axios from 'axios'
 import style from "./styles.module.css";
 import { useNavigate } from "react-router-dom";
-import { PostModal } from "../Modals/Sign-in_users_Modal/Index";
+import { PostModal } from "../Modals/add_post_Modal/Index";
 import {
     List,
     Bell,
@@ -24,7 +24,7 @@ export function AccountFooter() {
                     <div className={style.logo_container}>
                         <ul>
                             <li>
-                                <a href="#">
+                                <a href="/configs">
                                     <button>
                                         <List color={"#000"} size={30} />
                                     </button>

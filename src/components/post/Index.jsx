@@ -34,15 +34,16 @@ export function Post({
 
     //checks if user liked this current post
     useEffect(() => {
+        let server_url = localStorage.getItem('jvs')
         
         //  request to the server
-        Axios.get(`https://jovens-visionarios-ucm-server.herokuapp.com/api/users/single/${author}`)
+        Axios.get(`${server_url}/users/single/${author}`)
         .then((response) => {
             setAuthorAvatar(response.data.result.Avatar)
         })
 
         //  request to the server
-        Axios.post("https://jovens-visionarios-ucm-server.herokuapp.com/api/likes/check_like", {
+        Axios.post(`${server_url}/likes/check_like`, {
             Author: Username,
             PostId: id,
         })
@@ -54,7 +55,7 @@ export function Post({
             .catch((err) => console.log(err));
 
         //  request to the server
-        Axios.post(`https://jovens-visionarios-ucm-server.herokuapp.com/api/comments/get_by_id`, {
+        Axios.post(`${server_url}/comments/get_by_id`, {
             PostId: id,
         })
             .then((response) => {
@@ -84,9 +85,10 @@ export function Post({
             Author: Username,
             PostId: id,
         };
+        let server_url = localStorage.getItem('jvs')
 
         // post request to add a like
-        Axios.post("https://jovens-visionarios-ucm-server.herokuapp.com/api/likes/add_like", valuesToSubmit)
+        Axios.post(`${server_url}/likes/add_like`, valuesToSubmit)
             .then((response) => {})
             .catch((err) => console.log(err));
     };
@@ -101,10 +103,12 @@ export function Post({
             Description: input,
             Image: Avatar
         };
+        let server_url = localStorage.getItem('jvs')
+        
 
         // post request to add a like
         Axios.post(
-            "https://jovens-visionarios-ucm-server.herokuapp.com/api/comments/add_comment",
+            `${server_url}/comments/add_comment`,
             valuesToSubmit
         )
             .then((response) => {
@@ -115,7 +119,7 @@ export function Post({
         /*
         
         refresh the comment list*/
-        Axios.post(`https://jovens-visionarios-ucm-server.herokuapp.com/api/comments/get_by_id`, {
+        Axios.post(`${server_url}/comments/get_by_id`, {
             PostId: id,
         })
             .then((response) => {
@@ -129,7 +133,7 @@ export function Post({
         <div className={style.post_container}>
             <header>
                 <div className={style.post_header_row_container}>
-                    <img width="30px" src={authorAvatar ? authorAvatar : '/assets/images/me1.jpg'} alt="" />
+                    <img width="30px" src={authorAvatar && authorAvatar} alt="" />
                     <div>
                         <span>{author}</span>
                         <span>{usertype}</span>

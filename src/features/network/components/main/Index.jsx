@@ -8,12 +8,12 @@ export function FeedMainContent() {
     const [listOfUsers, setListOfUsers] = useState([]);
     const [ searchTerm, setSearchTerm ] = useState('');
 
-    
     async function fetchData() {
         let user = await localStorage.getItem("jovens_visionarios_username");
+        let server_url = localStorage.getItem('jvs')
         
         // Fetching user info
-        await Axios.get(`https://jovens-visionarios-ucm-server.herokuapp.com/api/users/all`)
+        await Axios.get(`${server_url}/users/all`)
         .then((response) => {
             if (response.data.result) {
                 // console.log(response.data.result);
@@ -27,6 +27,7 @@ export function FeedMainContent() {
     useEffect( ()=>{
         fetchData()
     }, [])
+
     return (
         <div className={style.network_main_container}>
 

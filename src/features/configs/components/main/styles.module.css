@@ -1,0 +1,126 @@
+.configs_page{
+    width: 100%;
+    height: 100vh;
+}
+.configs_page .configs_page_row{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+.configs_page .configs_page_left{
+    width: 300px;
+    height: 90%;
+    background: var(--white);
+}
+.configs_page .configs_page_left strong{
+    font-weight: 600;
+    font-size: 2.2rem;
+    color: var(--text-dark);
+    margin: 14px;
+    margin-left: 24px;
+    display: block;
+}
+.configs_page .configs_page_left .configs_page_config_option{
+    margin: 14px 0;
+    margin-left: 0;
+}
+.configs_page .configs_page_left .configs_page_config_option span{
+    font-size: 1.5rem;
+    font-weight: 500;
+    opacity: .8;
+    margin: 14px;
+    margin-left: 24px;
+    display: block;
+    cursor: pointer;
+    padding-right: 20px;
+    color: var(--blue);
+}
+.configs_page .configs_page_left .configs_page_config_option span:hover{
+    opacity: .5;
+}
+
+
+
+
+.configs_page .configs_page_right{
+    width: min(60%, 100%);
+    margin-right: 100px;
+    margin-top:30px;
+}
+.configs_page .configs_page_right .configs_page_right_box{
+    width: 100%;
+    background: var(--white);
+    border-radius: 10px;
+    border: 1px solid var(--outline);
+}
+.configs_page .configs_page_right strong{
+    font-weight: 600;
+    font-size: 1.2rem;
+    color: var(--text-dark);
+    margin: 14px;
+    margin-left: 18px;
+    margin-bottom: 4px;
+    display: block;
+}
+.configs_page .configs_page_right .configs_page_config_info{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid var(--outline);
+    padding: 14px 18px;
+}
+.configs_page .configs_page_right .configs_page_config_info:last-child{
+    border: none;
+}
+.configs_page .configs_page_right .configs_page_config_info span{
+    color: var(--text-dark);
+}
+.configs_page .configs_page_right .configs_page_config_info span:last-child{
+    opacity: .8;
+    margin-right: 8px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media (max-width: 1025px) {
+    .configs_page .configs_page_left{
+        display: none;
+    }
+    .configs_page .configs_page_row{
+        justify-content: center;
+        align-items: center;
+        height: 60%;
+    }
+    .configs_page .configs_page_right{
+        width: min(75%, 100%);
+        margin: 0;
+    }
+    
+}
+@media (max-width: 600px) {
+    .configs_page .configs_page_right{
+        width: 90%;
+    }
+    .configs_page .configs_page_right .configs_page_config_info{
+        display: flex;
+        justify-content: flex-start;
+        flex-direction: column;
+    }
+}

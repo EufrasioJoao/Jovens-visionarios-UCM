@@ -2,7 +2,7 @@ import React, { useState, useEffect} from "react";
 import Axios from 'axios'
 import style from "./styles.module.css";
 import { useNavigate } from "react-router-dom";
-import { PostModal } from "../Modals/Sign-in_users_Modal/Index";
+import { PostModal } from "../Modals/add_post_Modal/Index";
 import { MenuModal } from "../Modals/Menu_Modal/Index";
 import {
     RssSimple,
@@ -24,18 +24,12 @@ export function AccountHeader() {
     const [menuModal, setMenuModal] = useState(false);
     const navigate = useNavigate();
 
-    //handles navigation and current active route
-    const navigateTo = async (route) => {
-        await setClicked_header_route(route);
-        if (route === "follow_requests") setClicked_header_route("pedidos");
-        else if (route === "notification") setClicked_header_route("bell");
-        navigate(`/${route}`);
-    };
     
      useEffect( ()=>{
         let user = localStorage.getItem("jovens_visionarios_username");
+        let server_url = localStorage.getItem('jvs')
 
-        Axios.get(`https://jovens-visionarios-ucm-server.herokuapp.com/api/users/single/${user}`)
+        Axios.get(`${server_url}/users/single/${user}`)
         .then((response) => {
             setUserData(response.data.result)
             setUserInfo(response.data.result.Username)

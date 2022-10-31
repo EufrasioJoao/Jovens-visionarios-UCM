@@ -19,9 +19,10 @@ export function FeedLayout() {
     
     // Fetching user info
     useEffect( ()=>{
+        let server_url = localStorage.getItem('jvs')
         let user = localStorage.getItem("jovens_visionarios_username");
 
-        Axios.get(`https://jovens-visionarios-ucm-server.herokuapp.com/api/users/single/${user}`)
+        Axios.get(`${server_url}/users/single/${user}`)
         .then((response) => {
             setUserInfo(response.data.result)
         })
@@ -32,12 +33,9 @@ export function FeedLayout() {
         <div>
             <AccountHeader data={Username}/>
             <div className={style.feed_container}>
-                <FeedLeftAsideBar
-                    data={UserInfo}
-                />
+                <FeedLeftAsideBar data={UserInfo}/>
                 <FeedMainContent />
                 <FeedRightAsideBar />
-                
             </div>
             <AccountFooter />
         </div>

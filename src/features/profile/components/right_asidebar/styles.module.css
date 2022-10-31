@@ -32,6 +32,7 @@
     width: 100%;
     margin: 0 0 8px 0;
     font-weight: 600;
+    color: var(--text-dark);
 }
 .right_asidebar_container .right_asidebar_promotions .right_asidebar_promotions_row{
     display: flex;
@@ -98,27 +99,6 @@
 
 *
 */
-.right_asidebar_container .right_asidebar_changeconfigs {
-    width: 100%;
-    background: var(--white);
-    border-radius: 4px;
-    padding: 8px 18px;
-    box-shadow: 2px 2px 3px var(--main-white-light-outline);
-}
-.right_asidebar_container .right_asidebar_changeconfigs a{
-    text-decoration: none;
-    background: var(--blue);
-    width: 100%;
-    color: var(--text-white);
-    text-align: center;
-    padding: 8px;
-    border-radius: 4px;
-    display: block;
-    transiton: .5s;
-}
-.right_asidebar_container .right_asidebar_changeconfigs a:hover{
-    opacity: .8;
-}
 
 @media (max-width: 930px){
     .right_asidebar_container {

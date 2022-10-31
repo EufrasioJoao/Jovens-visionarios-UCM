@@ -14,6 +14,8 @@ export const PostModal = ({ onClose = () => {} }) => {
     const handleSubmit = (e) => {
         e.preventDefault();
 
+        let server_url = localStorage.getItem('jvs')
+
         // object to be submited
         const valuesToSubmit = {
             AuthorImage: Avatar ? Avatar : '/assets/images/me1.jpg',
@@ -26,12 +28,12 @@ export const PostModal = ({ onClose = () => {} }) => {
         };
 
         // post request to the server
-        Axios.post("https://jovens-visionarios-ucm-server.herokuapp.com/api/posts/upload", {
+        Axios.post(`${server_url}/posts/upload`, {
             valuesToSubmit,
         })
             .then((response) => {
                 setMessage(response.data.message);
-                if (response.data.succes === true) return 0;
+                if(response.data.succes === true) onClose()
             })
             .catch((err) => console.log(err));
     };

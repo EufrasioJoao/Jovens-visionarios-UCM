@@ -12,7 +12,7 @@
 .Menu_Modal .Menu_Modal_Row {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: flex-start;
     margin-top: 8px;
 }
 .Menu_Modal .Menu_Modal_Row img{
@@ -27,6 +27,7 @@
 }
 .Menu_Modal .Menu_Modal_Row .Menu_Modal_Row_content span{
     display: block;
+    color: var(--text-dark);
 }
 .Menu_Modal .Menu_Modal_Row .Menu_Modal_Row_content span:last-child{
     font-size: .8rem;

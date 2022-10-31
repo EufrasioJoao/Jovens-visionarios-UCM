@@ -31,8 +31,8 @@ export const MenuModal = ({ userData }) => {
             
             <div className={Style.Menu_Modal_account_links}>
                 <strong>Conta</strong>
-                <a href='#'>Configurações e privacidade</a>
-                <a href='#'>Ajuda</a>
+                <a href='/configs'>Configurações e privacidade</a>
+                {/* <a href='#'>Ajuda</a> */}
                 <div className={Style.Menu_Modal_line}></div>
                 <span onClick={logOutUser}>Sair</span>
             </div>

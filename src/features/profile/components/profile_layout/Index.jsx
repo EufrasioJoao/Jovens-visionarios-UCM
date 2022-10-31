@@ -14,7 +14,7 @@ export function ProfileLayout() {
 
     return (
         <div>
-            <AccountHeader data={Username}/>
+            <AccountHeader />
                 <div className={style.feed_container}>
                     <ProfileMainContent />
                     <ProfileRightAsideBar />

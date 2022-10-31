@@ -1,12 +1,16 @@
-import React from "react";
+import React, { useState, useEffect} from "react";
 import style from "./styles.module.css";
+import Axios from 'axios'
+import { UpdateUserInfo } from "../edit_profile_Modal/Index";
 
-export function ProfileRightAsideBar({image, backgroungimage}) {
+export function ProfileRightAsideBar() {
+    const [updateMyInfoModal, setUpdateMyInfoModal] = useState(false);
+
     return (
         <div className={style.right_asidebar_container}>
             <div className={style.right_asidebar_configs}>
-                <a href='#'>Editar Perfil</a>
-                <a href='#'>Configuarações principais</a>
+                <a href='#' onClick={()=>setUpdateMyInfoModal(true)}>Editar Perfil</a>
+                <a href='/configs'>Configuarações principais</a>
             </div>
 
             <div className={style.right_asidebar_promotions}>
@@ -22,9 +26,10 @@ export function ProfileRightAsideBar({image, backgroungimage}) {
                 </div>
             </div>
 
-            <div className={style.right_asidebar_changeconfigs}>
-                <a href='#' >Mude as suas configs</a>
-            </div>
+
+            {updateMyInfoModal && (
+                <UpdateUserInfo onClose={() => setUpdateMyInfoModal(false)}/>
+            )}
         </div>
     );
 }
